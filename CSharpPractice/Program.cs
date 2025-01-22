@@ -407,6 +407,38 @@ foreach (var name in names[2..names.Count])
 }*/
 
 /*
+ * Sorting and searching List
+ */
+/*var names = new List<string> { "John", "Ana", "Felipe" };
+foreach (var name in names)
+{
+    Console.WriteLine($"Hello {name.ToUpper()}!");
+}
+names.Sort();
+foreach (var name in names)
+{
+    Console.WriteLine($"Hello {name.ToUpper()}!");
+}*/
+var numbers = new List<int> { 45, 56,99,48,67,78 };
+foreach (var number in numbers)
+{
+    Console.WriteLine(number);
+}
+
+Console.WriteLine();
+Console.WriteLine($"I found 99 at {numbers.IndexOf(99)}");
+Console.WriteLine();
+
+numbers.Sort();
+Console.WriteLine($"I found 99 at {numbers.IndexOf(99)}");
+Console.WriteLine();
+
+foreach (var number in numbers)
+{
+    Console.WriteLine(number);
+}
+
+/*
  * Arrays
  */
 /*var names = new string[] { "Ana", "Felipe", "Maria", "Bill" };
