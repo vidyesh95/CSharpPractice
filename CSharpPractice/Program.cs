@@ -419,7 +419,7 @@ foreach (var name in names)
 {
     Console.WriteLine($"Hello {name.ToUpper()}!");
 }*/
-var numbers = new List<int> { 45, 56,99,48,67,78 };
+/*var numbers = new List<int> { 45, 56,99,48,67,78 };
 foreach (var number in numbers)
 {
     Console.WriteLine(number);
@@ -436,7 +436,7 @@ Console.WriteLine();
 foreach (var number in numbers)
 {
     Console.WriteLine(number);
-}
+}*/
 
 /*
  * Arrays
@@ -531,3 +531,24 @@ class Program
     }
 }
 */
+
+/*
+ * LINQ (Language Integrated Query) and IEnumerable
+ */
+// Specify the data source.
+int[] scores = [97, 92, 81, 60];
+
+// Define the query expression.
+IEnumerable<int> scoreQuery =
+    from score in scores
+    where score > 80
+    select score;
+
+// Execute the query.
+foreach (var i in scoreQuery)
+{
+    Console.Write(i + " ");
+} // Output: 97 92 81
+
+
+ 
