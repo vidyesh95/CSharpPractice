@@ -537,12 +537,15 @@ class Program
  */
 // Specify the data source.
 // int[] scores = [97, 92, 81, 60];
-List<int> scores = [97, 92, 81, 60];
+List<int> scores = [3, 45, 82 , 97, 92, 100, 81, 60];
+
+// scores.Sort();
 
 // Define the query expression.
 IEnumerable<int> scoreQuery =
     from score in scores
     where score > 80
+    orderby score descending
     select score;
 
 // Execute the query.
@@ -551,8 +554,31 @@ foreach (var i in scoreQuery)
     Console.Write(i + " ");
 } // Output: 97 92 81
 
+Console.WriteLine();
+IEnumerable<string> scoreQuery2 =
+    from score in scores
+    where score > 80
+    orderby score descending
+    select $"The score is {score}";
+
+// Execute the query.
+foreach (var s in scoreQuery2)
+{
+    Console.WriteLine(s);
+} // Output: 97 92 81
 
 
+Console.WriteLine();
+
+IEnumerable<int> highScoresQuery3 =
+    from score in scores
+    where score > 80
+    select score;
+
+var scoreCount = highScoresQuery3.Count();
+Console.WriteLine(scoreCount);
+
+Console.WriteLine();
 
 /*
  * LINQ (Language Integrated Query) and IEnumerable
