@@ -366,16 +366,69 @@ do
 /*
  * For Loop
  */
-for(int i = 0; i < 5; i++)
+/*for(int i = 0; i < 5; i++)
 {
     Console.WriteLine(i);
-}
+}*/
 
 // Using int
 // int count = 5;
 
 // Using var
 // var count = 5; // The compiler infers that 'count' is of type 'int'
+
+/*
+ * List T and Collections of data
+ */
+/*var names = new List<string> { "<name>", "Ana", "Felipe" };
+names.Add("Maria");
+names.Add("Bill");
+names.Remove("Ana");
+
+for (int i = 0; i < names.Count; i++)
+{
+    Console.WriteLine($"Hello {names[i].ToUpper()}!");
+}
+
+foreach (var name in names)
+{
+    Console.WriteLine($"Hello {name.ToUpper()}!");
+}
+Console.WriteLine($"My name is {names[0]}.");
+Console.WriteLine($"I've added {names[2]} and {names[3]} to the list.");
+Console.WriteLine($"The list has {names.Count} people in it");
+Console.WriteLine(names[0]);
+Console.WriteLine(names[names.Count-1]);
+Console.WriteLine(names[^1]); // end operator
+
+foreach (var name in names[2..names.Count])
+{
+    Console.WriteLine($"Hello {name.ToUpper()}!");
+}*/
+
+/*
+ * Arrays
+ */
+/*var names = new string[] { "Ana", "Felipe", "Maria", "Bill" };
+foreach (var name in names[2..4])
+{
+    Console.WriteLine($"Hello {name.ToUpper()}!");
+}
+Console.WriteLine();
+foreach (var name in names)
+{
+    Console.WriteLine($"Hello {name.ToUpper()}!");
+}
+Console.WriteLine();
+names = [..names, "John"]; // make new array and add John to it. 
+names = names.Append("Sean").ToArray(); // append method from System.Linq to add "Sean" to the end of the names array.
+                                        // The Append method returns an IEnumerable<string>, which is then converted
+                                        // back to an array using the ToArray method. This is the correct way to append
+                                        // an element to an array in C#.
+foreach (var name in names)
+{
+    Console.WriteLine($"Hello {name.ToUpper()}!");
+}*/
 
 /*
  * Generics
