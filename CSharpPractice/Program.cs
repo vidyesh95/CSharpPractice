@@ -363,6 +363,14 @@ do
     Console.WriteLine($"Counter is {counter}");
 } while (counter > 5);*/
 
+/*
+ * For Loop
+ */
+for(int i = 0; i < 5; i++)
+{
+    Console.WriteLine(i);
+}
+
 // Using int
 // int count = 5;
 
