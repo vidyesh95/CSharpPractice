@@ -339,7 +339,7 @@ else
     }
 }*/
 
-int sum = 0;
+/*int sum = 0;
 for (int number = 1; number < 21; number++)
 {
     if (number % 3 == 0)
@@ -347,4 +347,94 @@ for (int number = 1; number < 21; number++)
         sum = sum + number;
     }
 }
-Console.WriteLine($"The sum is {sum}");
+Console.WriteLine($"The sum is {sum}");*/
+
+/*int counter = 0;
+while (counter < 5)
+{
+    counter++;
+    Console.WriteLine($"Counter is {counter}");
+}*/
+
+/*int counter = 0;
+do
+{
+    counter++;
+    Console.WriteLine($"Counter is {counter}");
+} while (counter > 5);*/
+
+// Using int
+// int count = 5;
+
+// Using var
+// var count = 5; // The compiler infers that 'count' is of type 'int'
+
+/*
+ * Generics
+ *
+ * Generics in C# allow you to define classes, methods, and data structures with a
+ * placeholder for the type of data they store or use. This provides type safety
+ * without the need to specify the exact data type until the class or method is
+ * instantiated or called. Generics improve code reusability and performance by
+ * eliminating the need for type casting and boxing/unboxing.
+ */
+
+/*
+public class GenericList<T>
+{
+    private T[] items;
+    private int count;
+
+    public GenericList(int capacity)
+    {
+        items = new T[capacity];
+        count = 0;
+    }
+
+    public void Add(T item)
+    {
+        if (count < items.Length)
+        {
+            items[count] = item;
+            count++;
+        }
+    }
+
+    public T Get(int index)
+    {
+        if (index >= 0 && index < count)
+        {
+            return items[index];
+        }
+        throw new IndexOutOfRangeException();
+    }
+}
+
+public class Utilities
+{
+    public static void Swap<T>(ref T a, ref T b)
+    {
+        T temp = a;
+        a = b;
+        b = temp;
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        // Using the generic class
+        GenericList<int> intList = new GenericList<int>(5);
+        intList.Add(1);
+        intList.Add(2);
+        Console.WriteLine(intList.Get(0)); // Output: 1
+        Console.WriteLine(intList.Get(1)); // Output: 2
+
+        // Using the generic method
+        int a = 5, b = 10;
+        Utilities.Swap(ref a, ref b);
+        Console.WriteLine($"a: {a}, b: {b}"); // Output: a: 10, b: 5
+    }
+}
+*/
