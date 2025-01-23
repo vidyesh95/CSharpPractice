@@ -548,11 +548,19 @@ IEnumerable<int> scoreQuery =
     orderby score descending
     select score;
 
+List<int> myScores = scoreQuery.ToList();
+
 // Execute the query.
 foreach (var i in scoreQuery)
 {
     Console.Write(i + " ");
 } // Output: 97 92 81
+
+Console.WriteLine();
+foreach (var score in myScores)
+{
+    Console.WriteLine(score);
+}
 
 Console.WriteLine();
 IEnumerable<string> scoreQuery2 =
@@ -580,25 +588,27 @@ Console.WriteLine(scoreCount);
 
 Console.WriteLine();
 
+
 /*
  * LINQ (Language Integrated Query) and IEnumerable
  */
 
 // The Three Parts of a LINQ Query:
 // 1. Data source.
-int[] numbers = [ 0, 1, 2, 3, 4, 5, 6 ];
+/*int[] numbers = [ 0, 1, 2, 3, 4, 5, 6 ];*/
 
 // 2. Query creation.
 // numQuery is an IEnumerable<int>
-var numQuery = from num in numbers
+/*var numQuery = from num in numbers
     where (num % 2) == 0
-    select num;
+    select num;*/
 
 // 3. Query execution.
-foreach (int num in numQuery)
+/*foreach (int num in numQuery)
 {
     Console.Write("{0,1} ", num);
-}
+}*/
+
 
 
  
