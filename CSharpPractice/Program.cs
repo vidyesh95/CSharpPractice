@@ -452,7 +452,7 @@ foreach (var name in names)
     Console.WriteLine($"Hello {name.ToUpper()}!");
 }
 Console.WriteLine();
-names = [..names, "John"]; // make new array and add John to it. 
+names = [..names, "John"]; // make new array and add John to it.
 names = names.Append("Sean").ToArray(); // append method from System.Linq to add "Sean" to the end of the names array.
                                         // The Append method returns an IEnumerable<string>, which is then converted
                                         // back to an array using the ToArray method. This is the correct way to append
@@ -627,6 +627,12 @@ namespace CSharpPractice
 
 var person1 = new Person("Jack", "Hughes", new DateOnly(1990, 1, 30));
 var person2 = new Person("Jane", "Catalan", new DateOnly(1985, 5, 15));
+
+person1.Pets.Add(new Dog("Fluffy"));
+person1.Pets.Add(new Dog("Wang"));
+
+person2.Pets.Add(new Cat("Whiskers"));
+
 // var people = new List<Person> { person1, person2 };
 List<Person> people = [person1, person2];
 
@@ -634,11 +640,37 @@ Console.WriteLine($"{people.Count} people"); // Output: 2
 Console.WriteLine($"First person: {person1.FirstName} {person1.LastName} {person1.Birthday}");
 Console.WriteLine($"Second person: {person2.FirstName} {person2.LastName} {person2.Birthday}");
 
+foreach (var person in people)
+{
+    Console.WriteLine($"{person.FirstName} {person.LastName} was born on {person.Birthday}");
+    foreach (var pet in person.Pets)
+    {
+        Console.WriteLine($"{person.FirstName} has a pet {pet} that says {pet.MakeNoise()}");
+    }
+}
+
 public class Person(string firstName, string lastName, DateOnly birthday)
 {
     public string FirstName { get; } = firstName;
     public string LastName { get; } = lastName;
     public DateOnly Birthday { get; } = birthday;
+    public List<Pet> Pets { get; } = new();
+    public override string ToString() => $"Human {FirstName} {LastName}";
 }
 
- 
+public abstract class Pet(string name)
+{
+    public string Name { get; } = name;
+    public abstract string MakeNoise();
+    public override string ToString() => $"{GetType().Name} called {Name}";
+}
+
+public class Cat(string name) : Pet(name)
+{
+    public override string MakeNoise() => "Meow!";
+}
+
+public class Dog(string name): Pet(name)
+{
+    public override string  MakeNoise() => "Woof!";
+}
