@@ -537,21 +537,21 @@ class Program
  */
 // Specify the data source.
 // int[] scores = [97, 92, 81, 60];
-List<int> scores = [3, 45, 82 , 97, 92, 100, 81, 60];
+// List<int> scores = [3, 45, 82 , 97, 92, 100, 81, 60];
 
 // scores.Sort();
 
 // Define the query expression.
-IEnumerable<int> scoreQuery =
+/*IEnumerable<int> scoreQuery =
     from score in scores
     where score > 80
     orderby score descending
     select score;
 
-List<int> myScores = scoreQuery.ToList();
+List<int> myScores = scoreQuery.ToList();*/
 
 // Execute the query.
-foreach (var i in scoreQuery)
+/*foreach (var i in scoreQuery)
 {
     Console.Write(i + " ");
 } // Output: 97 92 81
@@ -567,16 +567,16 @@ IEnumerable<string> scoreQuery2 =
     from score in scores
     where score > 80
     orderby score descending
-    select $"The score is {score}";
+    select $"The score is {score}";*/
 
 // Execute the query.
-foreach (var s in scoreQuery2)
+/*foreach (var s in scoreQuery2)
 {
     Console.WriteLine(s);
-} // Output: 97 92 81
+}*/ // Output: 97 92 81
 
 
-Console.WriteLine();
+/*Console.WriteLine();
 
 IEnumerable<int> highScoresQuery3 =
     from score in scores
@@ -586,7 +586,7 @@ IEnumerable<int> highScoresQuery3 =
 var scoreCount = highScoresQuery3.Count();
 Console.WriteLine(scoreCount);
 
-Console.WriteLine();
+Console.WriteLine();*/
 
 
 /*
@@ -609,6 +609,36 @@ Console.WriteLine();
     Console.Write("{0,1} ", num);
 }*/
 
+/*
+ * Object-Oriented Programming (OOP)
+ */
+/*using System;
 
+namespace CSharpPractice
+{
+    public class MyApp
+    {
+        public static void Main()
+        {
+            Console.WriteLine("Object oriented programming");
+        }
+    }
+}*/
+
+var person1 = new Person("Jack", "Hughes", new DateOnly(1990, 1, 30));
+var person2 = new Person("Jane", "Catalan", new DateOnly(1985, 5, 15));
+// var people = new List<Person> { person1, person2 };
+List<Person> people = [person1, person2];
+
+Console.WriteLine($"{people.Count} people"); // Output: 2
+Console.WriteLine($"First person: {person1.FirstName} {person1.LastName} {person1.Birthday}");
+Console.WriteLine($"Second person: {person2.FirstName} {person2.LastName} {person2.Birthday}");
+
+public class Person(string firstName, string lastName, DateOnly birthday)
+{
+    public string FirstName { get; } = firstName;
+    public string LastName { get; } = lastName;
+    public DateOnly Birthday { get; } = birthday;
+}
 
  
